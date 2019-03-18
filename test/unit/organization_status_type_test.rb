@@ -4,14 +4,14 @@
 #
 # ### Columns
 #
-# Name           | Type               | Attributes
-# -------------- | ------------------ | ---------------------------
-# **`display`**  | `boolean`          |
-# **`id`**       | `integer`          | `not null, primary key`
-# **`name`**     | `string(255)`      |
-## ## Schema Information
+# Name                 | Type               | Attributes
+# -------------------- | ------------------ | ---------------------------
+# **`display`**        | `boolean`          |
+# **`id`**             | `integer`          | `not null, primary key`
+# **`is_build`**       | `boolean`          |
+# **`is_electrical`**  | `boolean`          |
+# **`name`**           | `string(255)`      |
 #
-
 
 require 'test_helper'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190227204757) do
+ActiveRecord::Schema.define(version: 20190318002930) do
 
   create_table "certification_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -173,8 +173,10 @@ ActiveRecord::Schema.define(version: 20190227204757) do
   end
 
   create_table "organization_status_types", force: :cascade do |t|
-    t.string  "name",    limit: 255
+    t.string  "name",          limit: 255
     t.boolean "display"
+    t.boolean "is_build"
+    t.boolean "is_electrical"
   end
 
   create_table "organization_statuses", force: :cascade do |t|
@@ -231,10 +233,7 @@ ActiveRecord::Schema.define(version: 20190227204757) do
     t.string   "cached_student_class",      limit: 255
     t.datetime "cache_updated"
     t.datetime "waiver_start"
-    t.integer  "phone_carrier_id",          limit: 4
   end
-
-  add_index "participants", ["phone_carrier_id"], name: "index_participants_on_phone_carrier_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -376,6 +375,12 @@ ActiveRecord::Schema.define(version: 20190227204757) do
 
   add_foreign_key "certifications", "certification_types"
   add_foreign_key "certifications", "participants"
+  add_foreign_key "judgements", "judgement_categories"
+  add_foreign_key "judgements", "judges"
+  add_foreign_key "judgements", "organizations"
+  add_foreign_key "store_purchases", "charges"
+  add_foreign_key "store_purchases", "store_items"
   add_foreign_key "tool_type_certifications", "certification_types"
   add_foreign_key "tool_type_certifications", "tool_types"
+  add_foreign_key "tools", "tool_types"
 end
