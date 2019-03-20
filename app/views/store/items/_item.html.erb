@@ -1,7 +1,12 @@
 <tr>
   <td><%= link_to item.name, item, :class => 'btn btn-info btn-xs'  %></td>
   <td><%= number_to_currency item.price %></td>
-  <td><%= item.quantity_available %></td>
+  <% if item.in_stock? %>
+    <td>In Stock</td>
+  <% else %>
+    <td>Out of Stock</td>
+  <% end %>
+  
   <td>
     <% if can?(:create, Charge) %>
       <%= link_to t('.add_to_cart', :default => t("helpers.links.add_to_cart")),
