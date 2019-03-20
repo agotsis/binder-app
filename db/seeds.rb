@@ -58,7 +58,7 @@ puts '  Organization Status Types'
 csv_text = File.read(Rails.root.join('lib', 'seeds', gdrive_doc + 'organization_status_types.csv'))
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
-  OrganizationStatusType.create(name: row['name'].strip, display: row['display'] == "TRUE")
+  OrganizationStatusType.create(name: row['name'].strip, display: row['display'] == "TRUE", is_build: row['is_build'] == "FALSE", is_electrical: row['is_electrical'] == "FALSE")
 end
 
 puts '  Charge Types'

@@ -1,15 +1,15 @@
-name,display
-Authorized for Plan Deviation,FALSE
-Structural Inspection,TRUE
-First Floor Level,TRUE
-First Floor Walls Approved,TRUE
-Stairs Approved,TRUE
-Second Floor Level,TRUE
-Second Floor Walls Approved,TRUE
-Roof Approved,TRUE
-Electrical Inspection I,TRUE
-Electrical Inspection II,TRUE
-Electrical Inspection Final,TRUE
-Final Inspection Passed,TRUE
-Teardown Plot Clean,TRUE
-Note,FALSE
+name,display,is_build,is_electrical
+Authorized for Plan Deviation,FALSE,FALSE,FALSE
+Structural Inspection,TRUE,TRUE,FALSE
+First Floor Level,TRUE,TRUE,FALSE
+First Floor Walls Approved,TRUE,TRUE,FALSE
+Stairs Approved,TRUE,TRUE,FALSE
+Second Floor Level,TRUE,TRUE,FALSE
+Second Floor Walls Approved,TRUE,TRUE,FALSE
+Roof Approved,TRUE,TRUE,FALSE
+Electrical Inspection I,TRUE,FALSE,TRUE
+Electrical Inspection II,TRUE,FALSE,TRUE
+Electrical Inspection Final,TRUE,FALSE,TRUE
+Final Inspection Passed,TRUE,FALSE,FALSE
+Teardown Plot Clean,TRUE,FALSE,FALSE
+Note,FALSE,FALSE,FALSE
